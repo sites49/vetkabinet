@@ -126,7 +126,7 @@ h2 { font: 500 clamp(44px, 6vw, 92px)/.95 var(--fd); letter-spacing: -.02em; mar
 
 /* цены: разделы в две колонки, цены по правому краю одной колонки */
 .acc { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; align-items: start }
-.acc > div { border-top: 1px solid var(--line) }
+.acc > details:nth-child(-n+2) { border-top: 1px solid var(--line) }
 details { border-bottom: 1px solid var(--line) }
 summary { list-style: none; display: flex; justify-content: space-between; align-items: center; padding: 22px 0; cursor: pointer;
   font: 500 clamp(26px, 2.5vw, 34px)/1.1 var(--fd) }
@@ -219,7 +219,7 @@ footer nav { display: flex; flex-wrap: wrap; gap: 6px 22px }
   .row .no { display: none } .row h3 { font-size: min(7.4vw, 28px); overflow-wrap: anywhere } .row .from { text-align: left } .row:hover h3 { transform: none }
   .mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: none; grid-auto-rows: 44vw }
   .mosaic figure:first-child { grid-row: span 1 }
-  .acc { grid-template-columns: 1fr } .acc > div + div { border-top: 0 }
+  .acc { grid-template-columns: 1fr } .acc > details:nth-child(2) { border-top: 0 }
   .steps { grid-template-columns: 1fr }
   .contact .wrap { grid-template-columns: minmax(0, 1fr) } .contact address { font-size: min(10.5vw, 44px) } .contact dl { grid-template-columns: minmax(0, auto) minmax(0, 1fr) }
   .map, .map .leaflet-container { min-height: 320px }
@@ -266,8 +266,10 @@ footer nav { display: flex; flex-wrap: wrap; gap: 6px 22px }
       <span class="from"></span></button><button class="row up" type="button" data-book="Ветаптека">
       <span class="no">6</span><img src="img/r5.jpg" alt="" loading="lazy"><h3>Ветаптека</h3><p>Лечебные корма и препараты.</p>
       <span class="from"></span></button></div></div></section>
+  
   <section id="studio"><div class="wrap"><h2 class="up">Кабинет</h2><div class="mosaic"><figure class="up"><img src="img/m0.jpg" alt="Кабинет приёма" loading="lazy"><figcaption>Кабинет приёма</figcaption></figure><figure class="up"><img src="img/m1.jpg" alt="Вход с проспекта" loading="lazy"><figcaption>Вход с проспекта</figcaption></figure><figure class="up"><img src="img/m2.jpg" alt="Пациент у стойки" loading="lazy"><figcaption>Пациент у стойки</figcaption></figure><figure class="up"><img src="img/m3.jpg" alt="Пациент" loading="lazy"><figcaption>Пациент</figcaption></figure><figure class="up"><img src="img/m4.jpg" alt="Ветаптека" loading="lazy"><figcaption>Ветаптека</figcaption></figure></div></div></section>
-  <section id="prices"><div class="wrap"><h2 class="up">Цены</h2><div class="acc"><div><details open><summary>Приём и диагностика<i></i></summary><div class="pl"><button type="button" data-book="Консультация и лечение"><span>Консультация и лечение</span><b>2 000 ₽</b></button><button type="button" data-book="УЗИ внутренних органов"><span>УЗИ внутренних органов</span><b>от 1 000 ₽</b></button><button type="button" data-book="УЗИ сердца"><span>УЗИ сердца</span><b>3 000 ₽</b></button><button type="button" data-book="ЭКГ"><span>ЭКГ</span><b>3 000 ₽</b></button></div></details></div><div><details open><summary>Анализы<i></i></summary><div class="pl"><button type="button" data-book="Биохимия крови, 24 показателя"><span>Биохимия крови, 24 показателя</span><b>5 000 ₽</b></button><button type="button" data-book="Анализ мочи"><span>Анализ мочи</span><b>1 300 ₽</b></button><button type="button" data-book="Соскоб на отодектоз и демодекоз"><span>Соскоб на отодектоз и демодекоз</span><b>1 000 ₽</b></button></div></details></div></div></div></section>
+  
+  <section id="prices"><div class="wrap"><h2 class="up">Цены</h2><div class="acc"><details open><summary>Приём и диагностика<i></i></summary><div class="pl"><button type="button" data-book="Консультация и лечение"><span>Консультация и лечение</span><b>2 000 ₽</b></button><button type="button" data-book="УЗИ внутренних органов"><span>УЗИ внутренних органов</span><b>от 1 000 ₽</b></button><button type="button" data-book="УЗИ сердца"><span>УЗИ сердца</span><b>3 000 ₽</b></button><button type="button" data-book="ЭКГ"><span>ЭКГ</span><b>3 000 ₽</b></button></div></details><details open><summary>Анализы<i></i></summary><div class="pl"><button type="button" data-book="Биохимия крови, 24 показателя"><span>Биохимия крови, 24 показателя</span><b>5 000 ₽</b></button><button type="button" data-book="Анализ мочи"><span>Анализ мочи</span><b>1 300 ₽</b></button><button type="button" data-book="Соскоб на отодектоз и демодекоз"><span>Соскоб на отодектоз и демодекоз</span><b>1 000 ₽</b></button></div></details></div></div></section>
   <section id="how"><div class="wrap"><h2 class="up">Как записаться</h2><div class="steps"><div class="step up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 9.5h8M8 12.5h5"/></svg><h3>Напишите или позвоните</h3><p>Расскажите, что беспокоит питомца, подскажем, когда прийти.</p></div><div class="step up"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><h3>Выберите время</h3><p>Будни с 11 до 19, в субботу до 16.</p></div><div class="step up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><h3>Приходите</h3><p>Карла Маркса, 84, вход в цокольный этаж.</p></div></div></div></section>
   <div class="contact" id="contacts"><div class="wrap">
     <div>
