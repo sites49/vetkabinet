@@ -125,7 +125,7 @@ h2 { font: 500 clamp(44px, 6vw, 92px)/.95 var(--fd); letter-spacing: -.02em; mar
   background: color-mix(in srgb, var(--bg) 70%, transparent); backdrop-filter: blur(8px) }
 
 /* цены: разделы в две колонки, цены по правому краю одной колонки */
-.acc { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; align-items: start }
+.acc { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; align-items: stretch }
 .acc > details:nth-child(-n+2) { border-top: 1px solid var(--line) }
 details { border-bottom: 1px solid var(--line) }
 summary { list-style: none; display: flex; justify-content: space-between; align-items: center; padding: 22px 0; cursor: pointer;
